@@ -1,0 +1,20 @@
+<i class="fa-brands fa-youtube"></i>
+돋보기
+<i class="fa-solid fa-magnifying-glass"></i>
+
+아래화살표
+<i class="fa-solid fa-caret-down"></i>
+dotdotdot
+<i class="fa-solid fa-ellipsis-vertical"></i>
+
+<i class="fa-solid fa-thumbs-up"></i>
+
+<i class="fa-solid fa-thumbs-down"></i>
+
+<i class="fa-solid fa-share"></i>
+
+<i class="fa-solid fa-plus"></i>
+
+<i class="fa-solid fa-flag"></i>
+
+
