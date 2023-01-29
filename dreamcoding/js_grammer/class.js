@@ -132,3 +132,6 @@ console.log(triangle instanceof Rectangle);
 console.log(rectangle instanceof Triangle);
 console.log(triangle instanceof Shape);
 console.log(triangle instanceof Object);
+
+
+// 엠디엔 자바스크립트 레퍼런스 페이지에 가면 내부에 포함된 오브젝트들이 어떤것들이 있는지 볼수있음
