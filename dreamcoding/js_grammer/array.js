@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Array (자료구조 중 하나)
 
