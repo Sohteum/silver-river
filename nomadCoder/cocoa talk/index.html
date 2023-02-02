@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 이게 없으면 글자가깨질수있음 꼭 넣어줘야함. how to render the text -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="링크주소">
+  <!-- 여기 아이콘이미지를 넣고 주소를 넣으면 웹페이지 텝 좌측에 이미지가붙음 -->
+  <title>Document</title>
+  <!-- 이 타이틀이 우리가 웹에서 구글을 검색하면 나오는 그 타이틀이고, 클릭하면 나오는 탭 이름인거지 -->
+</head>
+
+<body>
+  <a href="http://naver.com" title="기본페이지">네이버</a>
+  <form action="">
+    <div>
+      <label for="profile">Profile Photo</label>
+      <!-- 레이블은 인풋과 함께여야만 동작함 레이블 안에는 for가 있고, 잇풋안에는 id가 있는데 그 이름이 서로 같아야함-->
+      <input id="profile" type="file" accept=".pdf" />
+    </div>
+    <div>
+      <label for="website"></label>
+      <input id="website" required placeholder="Name" type="url">
+      <!-- url을 입력하지않으면, 다른거누르고 엔터 누르면 url을 입력하라는 창이뜸 -->
+    </div>
+    <div><input required placeholder="LastName" disabled type="text">
+    </div>
+    <div>
+      <input required placeholder="UserName" type="text">
+    </div>
+    <div><input required placeholder="Password" type="text">
+    </div>
+    <input type="submit" value="Create Account" />
+  </form>
+</body>
+
+</html>
