@@ -20,18 +20,8 @@
 }
 
 .nav__notification {
-  background-color: tomato;
-  width: 26px;
-  height: 26px;
-  border-radius: 13px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
   position: absolute;
-  left: 20px;
+  left: 15px;
   bottom: 7px;
 }
 
@@ -44,6 +34,6 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 25px;
-  bottom: 19px;
+  left: 22px;
+  bottom: 17px;
 }
