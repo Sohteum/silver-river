@@ -102,11 +102,14 @@
 
   let counter = 0;
   function App() {
-    const [counter, modifier] = React.useState(0);//이름은 아무거나 괜찮아
+    const [counter, setCounter] = React.useState(0);//이름은 아무거나 괜찮아
+    const onClick = () => {
+      setCounter(counter + 1);
+    }
     return (
       <div>
         <h3>Total clicks: {counter}</h3>
-        <button>click me</button>
+        <button onClick={onClick}>click me</button>
       </div>
     )
   }
