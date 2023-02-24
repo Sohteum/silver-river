@@ -9,7 +9,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script type="text/babel"> //이건 좀 느리지만 지금 배우는단계니까 괜찮
-  const root = document.getElementById("root");
+  /*   const root = document.getElementById("root"); */
   /*   const span = React.creatElement("span", { id: "cuttie-span", style: { color: "red" } }, "hello i'm span"); 
   const btn = React.creatElement("button", {
     onClick: () => console.log('im clicked')
@@ -100,11 +100,12 @@
     c = 3이런식인거.
     */
 
-  let counter = 0;
+  /* let counter = 0;
   function App() {
     const [counter, setCounter] = React.useState(0);//이름은 아무거나 괜찮아
     const onClick = () => {
-      setCounter(counter + 1);
+      setCounter(counter + 1);  
+    setCounter((current) => current +1);
     }
     return (
       <div>
@@ -113,6 +114,34 @@
       </div>
     )
   }
+  ReactDOM.render(<App />, root);
+   */
+
+
+
+  function App() {
+    const [minutes, setMinutes] = React.useState();
+    // useState안에는 ''만 넣어도되고 안넣어도되고 뭘 넣어도됨
+    const onChange = () => {
+      setMinutes(event.target.value);
+    }
+    return (
+      <div>
+        <h1 className="hi">Super Converter</h1>
+        <div>
+          <label htmlFor="minutes">Minutes</label>
+          <input
+            value={minutes} id="minutes" placeholder="Minutes" type="number" onChange={onChange} />
+        </div>
+        <div>
+          <label htmlFor="hours">Hours</label>
+          <input
+            value={minutes} id="hours" placeholder="Hours" type="number" />
+        </div>
+      </div>
+    )
+  }
+  const root = document.getElementById("root");
   ReactDOM.render(<App />, root);
 
 </script>
