@@ -1,15 +1,15 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 500vh;
 }
 
 #chat-screen .alt-header,
 #chat-screen .status-bar {
+  top: 0;
   position: fixed;
-  top: 0px;
   width: 100%;
-  box-sizing: border-box;
   background-color: #abc1d1;
+  box-sizing: border-box;
 }
 
 #chat-screen .status-bar {
@@ -24,16 +24,87 @@ position fixed이면(혹은 엡솔포지션) layer를 가짐 */
   z-index: 1;
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
-  margin-top: 110px;
+  margin-top: 180px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s linear;
 }
 
 .chat__timestamp {
   color: white;
   background-color: #92a4b2;
-  padding: 10px;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.message-row img {
+  width: 50px;
+  height: 50px;
   border-radius: 20px;
-  font-size: 15px;
+
+  margin-right: 10px;
+}
+
+.message__author {
+  margin-bottom: 13px;
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 8px 13px;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message__time {
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.message-row--own .message__info {
+  flex-direction: row-reverse;
 }
