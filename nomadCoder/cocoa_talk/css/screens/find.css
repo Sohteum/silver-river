@@ -107,3 +107,25 @@ account .recommended-friends__title {
   height: 1px;
   margin: 15px 0px;
 }
+
+@keyframes heartBeat {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: tomato;
+    transform: scale(1.5);
+  }
+
+  100% {
+    color: white;
+    transform: none;
+  }
+}
+
+.open-post__heart-count:hover i {
+  will-change: tranform;
+  /* 브라우저에게 바뀔것을 미리 명시함으로써 안정화.브라우저를 돕는 역할 그래서 그카를 이용해서 가속화하는... */
+  animation: heartBeat 1s linear infinite;
+}
