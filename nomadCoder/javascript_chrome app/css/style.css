@@ -3,13 +3,67 @@
     padding: 0;
 }
 
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('img/0.jpg'), url('img/1.jpg'), url('img/2.jpg');
+}
+
+
 .hidden {
     display: none;
 }
 
-.weather {}
+#clock {
+    /*     display: inline-block; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 7rem;
+    color: #FFF;
+    opacity: 0.7;
+}
 
-.img {
-    height: 100vh;
-    background-size: cover;
+#todo-form input {
+    position: absolute;
+    color: #FFF;
+    z-index: 10;
+    top: 70%;
+    left: 50%;
+    width: 420px;
+    height: 30px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#todo-form>input[placeholder="Write a To Do and Press Enter"] {
+    color: #FFF;
+}
+
+h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    font-size: 6rem;
+    color: #FFF;
+}
+
+
+#weather span:first-child {
+    position: absolute;
+}
+
+#weather span:last-child {
+    position: absolute;
+}
+
+#quote {
+    position: absolute;
+    top: 93%;
+    left: 7%;
+    color: #000;
+    opacity: .8;
+    font-size: 1.2rem;
 }
