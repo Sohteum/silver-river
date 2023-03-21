@@ -1,0 +1,224 @@
+  /*   const span = React.creatElement("span", { id: "cuttie-span", style: { color: "red" } }, "hello i'm span"); 
+  const btn = React.creatElement("button", {
+    onClick: () => console.log('im clicked')
+  }, "click me");
+  const container = React.creatElement("div", null, [span, btn]);
+  */
+  // 스판 중괄호에 올수있는건 스판의 속성값. id를 만든거야. 그 옆에오는건 스판의 내용
+  // 우리는 html을 만들고, 찾아서 가져오고, 그다음 업데이트하고..이런식으로 안함. 리액js한테 업데이트해야하는 html을 업뎃하라고 시킬거임->자스에서 시작해서 html에서 끝나는거지.
+  // 여기서 자스를 이용해 엘리먼트를 생성했고, 리액js가 그걸 html로 번역하는것.
+  // 내용에 []대괄호로 엘리먼트를 넣을수도 있음
+  // 속성값에 이벤트리스너를 넣을수도 있음***이게 엄청난거야
+  /*   const Title = () => (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}
+      >
+        Hello i am a title
+      </h3>
+    ); */
+  /*   const h3 = React.createElement("h3",
+      {
+        id="title",
+        onMouseEnter: () => console.log("mouse enter"),
+      },
+      "Hello i am a title"
+    ); */
+
+  /*   const Button = () => (
+      <button
+        style={{
+          backgroundColor: "tomato",
+        }}
+        onClick={() => console.log("im clicked")}
+      >
+        click me
+      </button>
+    ); */
+
+  /*   const btn = React.createElement(
+      "button",
+      {
+        onClick: () => console.log("im clicked"),
+        style: {
+          backgroundColor: "tomato",
+        },
+      },
+      "click me"
+    );
+   */
+  /*   const Container = () => (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(<Container />, root); */
+  // const container = React.createElement("div", null, [Title, Button]);
+  // ReactDOM.render(container, root);
+
+  /*   let counter = 0;
+    function countUp() {
+      counter = counter + 1;
+      render();
+    }//이것도 함수
+    function render() {
+      ReactDOM.render(<App />, root);
+    }
+    function App() {
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button onClick={countUp}>click me</button>
+        </div>
+      )
+    }
+    render(); */
+
+  //리액트가 랜더를 해주는 방법!&리액트가 함수호출을 도와주는방법!
+  /*   const food = ["tomato, potato"]
+    const [myFavFood, mySecondFavFood] = food;
+    console.log(myFavFood);
+    'tomato' 
+     console.log(mySecondFavFood);
+    'potato'
+    =
+    const myFavFood = food[0];
+    myFavFood
+    const x = [1, 2, 3]
+    const [a, b, c] = x;
+    c = 3이런식인거.
+    */
+
+  /* let counter = 0;
+  function App() {
+    const [counter, setCounter] = React.useState(0);//이름은 아무거나 괜찮아
+    const onClick = () => {
+      setCounter(counter + 1);  
+    setCounter((current) => current +1);
+    }
+    return (
+      <div>
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={onClick}>click me</button>
+      </div>
+    )
+  }
+  ReactDOM.render(<App />, root);
+   */
+
+
+
+
+
+
+
+
+
+    const root = document.getElementById("root");
+    function MinutesToHours() {
+      const [amount, setAmount] = React.useState(0);
+      const [inverted, setInverted] = React.useState(false);
+      // useState안에는 ''만 넣어도되고 안넣어도되고 뭘 넣어도됨
+      //invert은 시를 분으로 바꾸는거
+      const onChange = (event) => {
+        setAmount(event.target.value);
+      };
+      const reset = () => setAmount(0);
+      const onInvert = () => {
+        reset();
+        setInverted((current) => !current);
+      };
+      return (
+        <div>
+          <h3>Minutes 2 Hours</h3>
+          <div>
+            <label htmlFor="minutes">Minutes</label>
+            <input
+              value={inverted ? amount * 60 : amount}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+              disabled={inverted}
+            />
+          </div>
+          <div>
+            <label htmlFor="hours">Hours</label>
+            <input
+              value={inverted ? amount : Math.round(amount / 60)}
+              id="hours"
+              placeholder="Hours"
+              type="number"
+              onChange={onChange}
+              disabled={!inverted}
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onInvert}>{inverted ? "Turn back " : "Invert"}</button>
+        </div>
+      );
+    };
+    function KmToMiles() {
+      const [distance, setDistance] = React.useState(0);
+      const [inverted, setInverted] = React.useState(false);
+      const onChange = (event) => {
+        setDistance(event.target.value);
+      };
+      const reset = () => setDistance(0);
+      const onInvert = () => {
+        reset();
+        setInverted((current) => !current);
+      };
+      const onClick = () => {
+        reset();
+      }
+      return (
+        <div>
+          <h3>Km 2 Miles</h3>
+          <div>
+            <label htmlFor="km">kilometer</label>
+            <input
+              value={inverted ? distance * 1.609344 : distance}
+              id="km"
+              placeholder="km"
+              type="number"
+              onChange={onChange}
+              disabled={inverted}
+            />
+          </div>
+          <div>
+            <label htmlFor="miles">miles</label>
+            <input
+              value={inverted ? distance : distance / 1.609344}
+              id="miles"
+              placeholder="miles"
+              type="number"
+              disabled={!inverted}
+              onChange={onChange} />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onInvert}>{inverted ? "Turn back " : "Invert"}</button>
+        </div>
+      );
+    };
+    function App() {
+      const [index, setIndex] = React.useState("xx");
+      const onSelect = (event) => {
+        setIndex(event.target.value);
+      };
+      return (
+        <div>
+          <h1>Super Converter</h1>
+          <select value={index} onChange={onSelect}>
+            <option value="xx">Select your units</option>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">Km & Miles</option>
+          </select>
+          <hr />
+          {index === "xx" ? "Please select your units" : null}
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, root);

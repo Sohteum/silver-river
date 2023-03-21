@@ -1,3 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('img/0.jpg'), url('img/1.jpg'), url('img/2.jpg');
+}
+
+
 .hidden {
     display: none;
 }
@@ -6,6 +20,6 @@ img {
     display: block;
 }
 
-body{
+body {
     display: inline-block;
 }
