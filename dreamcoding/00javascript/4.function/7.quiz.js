@@ -3,6 +3,16 @@
 // 5, 순회하는 숫자를 다 출력하고 싶음
 // 5, 순회하는 숫자의 두배값을 다 출력하고 싶음
 // function iterate(max, action)
+
+
+/* function iterate(max, action) {
+ for( i = 0, 0 > i > 10, ++i){
+  
+ }
+  return i * 2;
+}
+ */
+
 function iterate(max, action) {
   for (let i = 0; i < max; i++) {
     action(i);
