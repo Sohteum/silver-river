@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Movie from './components/Movie';
+import Movie from "../components/Movie";
 
-function App() {
+function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
@@ -23,18 +23,17 @@ function App() {
       ) : (
         <div>
           {movies.map((movie) => (
-            <div>
-              {movies.map((movie) => (
-                <Movie coverImg={movie.medium_cover_image} title={movie.title} summary={movie.summary} genres={movie.genres} />
-              ))}
-
-            </div>
+            <Movie
+              key={movie.id}
+              coverImg={movie.medium_cover_image}
+              title={movie.title}
+              summary={movie.summary}
+              genres={movie.genres}
+            />
           ))}
         </div>
       )}
     </div>
   );
-  return null;
 }
-
-export default App;
+export default Home;
