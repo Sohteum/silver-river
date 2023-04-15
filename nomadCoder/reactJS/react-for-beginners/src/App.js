@@ -1,22 +1,27 @@
-import Home from "./routes/Home";
-import Detail from "./routes/Detail";
+import React, { useState } from 'react';
+import ReactDom from "react-dom";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import "./style.css";
 
 function App() {
 
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movie/:id" element={<Detail />} />
-      </Routes>
-    </Router>
+  const [] = useState
 
+  const content = [
+    {
+      tab: "Section 1",
+      content: "I'm the content of the Section 1"
+    },
+    {
+      tab: "Section 2",
+      content: "I'm the content of the Section 2"
+    },
+  ]
+
+  return (
+    <div className='App'>
+      <h1>Hello</h1>
+    </div>
   );
 }
 
