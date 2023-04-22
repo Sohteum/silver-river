@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const root = document.getElementById('root');
+
+      function App() {
+        const [counter, setcounter] = React.useState(0); //모디파이어함수로 이제 갑을 바꿔줄거야
+        const onClick = () => {
+          //setcounter(878);
+          setcounter((current) => current + 1); //이렇게 함수를 사용하자!
+
+          //리액트의 useState 제공하는 기능. 데이터가 바뀔때마다 컴포넌트를 리렌더링하고 ui를 refresh하는거지
+          //이 컴포넌트가 재생성되고 코드가 재실행된다.
+          //지금은 counter를 사용해서 +1을 해주면서 새로운 값을 만들고있는데 이건 좋은방식이 아님.
+          //왜냐면 counter가 다른곳에서 업데이트될수도있잖아. 그러니까 값을 바로 가져와서 사용하는것은 안돼
+          //내가 생각한 초기값이 아닐 수 있다는거야. 그래서 버그가 생길 수 있음
+
+          //*그래서 state를 바꾸는 두가지 방법이 있음
+          //*1. setcounter를 이용해서 바꾸기.setcounter(878); 하지만 그냥 값을 넣어버리면 변하지 않는 새 값이 되겠지.
+          //*2. 이전값을 이용해서 현재값을 계산하는것.  setcounter((current) => current + 1);
+        };
+
+        return (
+          <div>
+            <h3>Total clicks:{counter}</h3>
+            <button onClick={onClick}>Click me</button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>
