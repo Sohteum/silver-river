@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    .shapes {
+      width: 600px;
+      height: 400px;
+      background: #ddd;
+    }
+    rect {
+      fill: orange;
+      stroke: tomato;
+      stroke-width: 10;
+    }
+    ellipse {
+      fill: #fff000;
+    }
+    /* css로 넣은게 속성으로 넣은것 보다 우선권이 높다 */
+  </style>
+  <body>
+    <svg class="shapes">
+      <rect
+        x="10"
+        y="20"
+        width="200"
+        height="100"
+      ></rect>
+      <rect
+        x="50"
+        y="170"
+        rx="10"
+        ry="10"
+        width="100"
+        height="100"
+      ></rect>
+      <circle
+        cx="350"
+        cy="250"
+        r="30"
+      />
+      <ellipse
+        cx="200"
+        cy="200"
+        rx="100"
+        ry="50"
+        fill="red"
+        stroke="green"
+        stroke-width="20"
+      ></ellipse>
+      <line></line>
+    </svg>
+  </body>
+</html>
