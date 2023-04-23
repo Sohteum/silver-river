@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <svg
+      class="face"
+      viewBox="0 0 770 839"
+    >
+      <style>
+        .face {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 200px;
+          margin: auto;
+        }
+
+        .face__hair {
+          fill: burlywood;
+        }
+
+        @keyframes eye-ani {
+          0% {
+            transform: scale(0.9);
+          }
+          100% {
+            transform: scale(1.1);
+          }
+        }
+
+        .face__eye {
+          transform-origin: center center;
+        }
+
+        .ani-on .face__eye {
+          animation: eye-ani 0.5s infinite;
+        }
+      </style>
+      <script>
+        const faceElem = document.querySelector('.face'); faceElem.addEventListener('click', function () { this.classList.toggle('ani-on'); });
+      </script>
+      <path d="M379.92 149a328.92 328.92 0 1 1-128.44 25.92A327.92 327.92 0 0 1 379.92 149m0-30c-198.83 0-360 161.18-360 360s161.17 360 360 360 360-161.18 360-360-161.18-360-360-360Z" />
+      <path
+        class="face__eye"
+        d="M220.92 387c-16.3 0-29.5 41-29.5 91.5s13.2 91.5 29.5 91.5 29.5-41 29.5-91.5-13.21-91.5-29.5-91.5ZM538.92 387c-16.3 0-29.5 41-29.5 91.5s13.2 91.5 29.5 91.5 29.5-41 29.5-91.5-13.21-91.5-29.5-91.5Z"
+      />
+      <path
+        d="M687.92 668s-43 136-195 136h8c-152 0-195-136-195-136"
+        style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 30px"
+        transform="translate(-117 -55)"
+      />
+      <ellipse
+        class="face__hair"
+        cx="236.5"
+        cy="231.5"
+        rx="236.5"
+        ry="121.5"
+      />
+      <ellipse
+        class="face__hair"
+        cx="359"
+        cy="110.5"
+        rx="220"
+        ry="110.5"
+      />
+      <ellipse
+        class="face__hair"
+        cx="579.5"
+        cy="229.5"
+        rx="190.5"
+        ry="119.5"
+      />
+    </svg>
+  </body>
+</html>
