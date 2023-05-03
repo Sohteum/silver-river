@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "@types/styled-components": "^5.1.26"
+  },
+  "dependencies": {
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.11.0"
   }
 }
