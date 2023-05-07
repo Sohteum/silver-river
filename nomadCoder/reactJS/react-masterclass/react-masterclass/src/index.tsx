@@ -1,24 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
-import App from './App';
+import { DefaultTheme } from 'styled-components';
 
-const darkTheme = {
-  textColor: 'whitesmoke',
-  backgroundColor: '#111',
+export const theme: DefaultTheme = {
+  bgColor: 'white',
+  textColor: 'black',
+  btnColor: 'tomato',
 };
 
-const lightTheme = {
-  textColor: '#111',
-  backgroundColor: 'whitesmoke',
+export const darkTheme: DefaultTheme = {
+  bgColor: 'black',
+  textColor: 'white',
+  btnColor: 'teal',
 };
-
-ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <App />
-    </ThemeProvider>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
