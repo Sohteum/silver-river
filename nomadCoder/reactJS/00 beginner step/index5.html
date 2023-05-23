@@ -66,8 +66,10 @@
               <option value='0'>Minutes & Hours</option>
               <option value='1'>Km & Miles</option>
             </select>
-            {index === '0' && <MinutesToHours />}
-            {index === '1' && <KmToMiles />}
+            <hr />
+            {index === 'xx' ? 'Please select your units' : null}
+            {index === '0' ? <MinutesToHours /> : null}
+            {index === '1' ? <KmToMiles /> : null}
           </div>
         );
       }
@@ -79,3 +81,9 @@
 </html>
 <!-- //            <MinutesToHours />
 <KmToMiles /> -->
+
+<!-- 
+  지금 이렇게 두개이상의 컴포넌트로 나눠서 작성하는걸 분할정복(divide and conquer)이라고 함
+  상단 두개 function은 시간·분 변환기와 km·miles계산기고 가장 아래 app function이 화면 출력용
+
+-->

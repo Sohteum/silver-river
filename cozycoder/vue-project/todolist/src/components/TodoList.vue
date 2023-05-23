@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { isContext } from 'vm';
+import { isContext } from 'vue';
 
 export default {
   props: {
