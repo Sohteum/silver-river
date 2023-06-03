@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="fnAddListHandler">
     <!-- v-on = @ , 소괄호를 넣으면 반드시 리턴을 해줘야함 자식이 부모한테 에밋으로 넘겨줄때는 소괄호가 있으면 안됨.(소괄호가 있고없고의 차이는 파라미터를 넣을것이냐 말것이냐의 차이) -->
-    <input v-model="_title" type="text" />
+    <input ref="_refInput" v-model="_title" type="text" />
     <!-- 브이모델은 폼에만 연결하는거. 온체인지이벤트발생했을때 알아서 바꿔주세요 -->
     <button>일정추가</button>
   </form>

@@ -7,10 +7,17 @@
   <!-- 에밋 보낼때 소괄호넣으면 절대안됨 파람을 넣으면 절대안되니까 그런게 아닐까 하는 선생님의 추측 절대 콜백함수 적으면 안됨 -->
 
   <ul>
-    <CompLi v-for="v in _todoArr" :key="v.id" :data="v"/><!-- 앞에 v가 붙으면 안에 스크립트. 브이포는 키랑 무조건 같이 쓰기 -->
+    <CompLi
+      v-for="(v, i) in _todoArr"
+      :key="v.id"
+      :data="v"
+      :idx="i"
+      :fnCompleted="_setTodoArrCompleted"
+      :_setRemoveTodoArrList="_setRemoveTodoArrList"
+    /><!-- 앞에 v가 붙으면 안에 스크립트. 브이포는 키랑 무조건 같이 쓰기 -->
   </ul>
 
-  <!-- {{ _todoArr }} -->
+  {{ _todoArr }}
 </template>
 
 <script>
@@ -31,10 +38,19 @@ export default {
       //v를 적는 이유는 꺼내서 쓰겠다는 뜻. 자식이 보내준 타이틀 값을 꺼내서 써준다는것
       _todoArr.value.push(emitData);
     };
-
+    const _setTodoArrCompleted = (idx, boolean) => {
+      //부모가 만든건 자식이 못바꾸니까 내려주는데 부모가 만들고 일은 자식이 한다.
+      //배열안의 객체의 체크값을 바꾼다.
+      _todoArr.value[idx].completed = boolean;
+    };
+    const _setRemoveTodoArrList = (i) => {
+      _todoArr.value.splice(i,1)
+    };
     return {
       _todoArr, //자식이 프롭스를 받아서 고칠수없음 리액트와다름. 부모가 무조건 해결해야함. 사용자가입력한 값을 받아서 부모한테 줘야함. 근데 그값을 날리는 방법은 없고, 에밋이라는 이벤트를 전송하는 방법만 있음 컨텍스트가 필요하다! 부모가 나한테 쏘는건 프롭스 자식이 보내는건 컨텍스트
       _setTodoArr,
+      _setTodoArrCompleted,
+      _setRemoveTodoArrList,
     };
   }, //setup은 컴포지션이다. 컴포지션 문법이다. 컴포지션 함수이다. 변수를 만들거나 함수를 만들수있음
 };
@@ -43,3 +59,8 @@ export default {
 <style>
 /* @import "./css/style.css"; */
 </style>
+
+
+<!-- 상태관리에서 리액트는 reducer, reduxe, recoil  &  context
+vue. provide/inject (vuex)가 있음
+-->
