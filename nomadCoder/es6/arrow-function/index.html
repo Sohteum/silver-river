@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>ipt
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <div class="arrow-function">
+      <p>
+        1. this를 사용할 때는 arrow-function을 사용할 수 없다
+        (arrow-function내부에서는 이벤트리스너의 타겟을 this로 감지할 수 없으며 this는 window를 가리키고있음)
+      </p>
+      <p>2. object내부에 선언된 함수도 마찬가지. object내부의 property를 핸들
+        링하려면 function으로 선언 필요
+      </p>
+      <p>
+        arrow function를 사용하면서 eventListner를 등록해야 할 때는 event를 (event)=>형태로 인자로 넘겨주는 방식의 대안 존재
+        (?????????)
+      </p>
+    </div>
+  </main>
+</body>
+
+</html>
