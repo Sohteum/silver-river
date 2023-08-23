@@ -8,84 +8,76 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function MinutesToHours() {
-      const [amount, setAmount] = React.useState(0);
-      const [inverted, setInverted] = React.useState(false);
-      //default가 불리언값이니까, true, false 이거에 따라서 able, disable설정함
+      const [amount, setAmount] = React.useState('0');
+      const [inverted, setInverted] = React.useState('false');
       const onChange = (e) => {
         setAmount(e.target.value);
-      };
+      }
       const reset = () => setAmount(0);
       const onInvert = () => {
         reset();
         setInverted((current) => !current);
-      };
+      }
       return (
         <div>
-          <label htmlFor='minutes'>Minutes</label>
-          <input
-            value={inverted ? amount * 60 : amount} //반올림.round//인버트됐다면 어마운트에서 60을 곱하고 아니라면 어마운트 보여줌
+          <label htmlFor="minutes">Minutes</label>
+          <input type="number" value={inverted ? amount * 60 : amount} //invert됐다면, 즉 hours에 입력했다면 60을 곱해주고 그게 아니라면 그냥 amount
             id='minutes'
-            placeholder='Minutes'
-            type='number'
+            placeholder="Minutes"
             onChange={onChange}
-            //disabled={inverted === true}
-            disabled={inverted}
+            disabled={inverted}//??이부분 이해안감
           />
           <div>
-            <label htmlFor='hours'>Hours</label>
-            <input
-              value={inverted ? amount : Math.round(amount / 60)} //인버트됐다면 어마운트 보여주고(hours에 입력했다는거) 그게 아니라면 어마운트를 60으로 나눔
+            <label htmlFor="hours">Hours</label>
+            <input type="number" value={inverted ? amount : amount / 60}
               id='hours'
-              placeholder='Hours'
-              type='number'
-              //disabled={inverted === false}
-              disabled={!inverted}
+              placeholder="Hours"
               onChange={onChange}
+              disabled={!inverted}//??이부분 이해안감
             />
           </div>
-          <button onClick={reset}>Reset</button>
-          <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
+          <div>
+            <button onClick={reset}>Reset</button>
+            <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
+          </div>
         </div>
       );
     }
     function KmToMiles() {
-      const [amount, setAmount] = React.useState(0);
-      const [inverted, setInverted] = React.useState(false);
+      const [amount, setAmount] = React.useState("0")
+      const [inverted, setInverted] = React.useState("false")
       const onChange = (e) => {
         setAmount(e.target.value);
-      };
+      }
       const reset = () => setAmount(0);
       const onInvert = () => {
         reset();
         setInverted((current) => !current);
-      };
-      return(
+      }
+      return (
         <div>
-        <label htmlFor='Km'>Km</label>
-        <input
-          value={inverted ? amount * 1.609 : amount} 
-          id='minutes'
-          placeholder='Minutes'
-          type='number'
-          onChange={onChange}
-          //disabled={inverted === true}
-          disabled={inverted}
-        />
-        <div>
-          <label htmlFor='Miles'>Miles</label>
-          <input
-            value={inverted ? amount : amount / 1.609} 
-            id='hours'
-            placeholder='Hours'
-            type='number'
-            //disabled={inverted === false}
-            disabled={!inverted}
+          <label htmlFor="km">Km</label>
+          <input type="number"
+            value={inverted? amount * 1.609 : amount}
+            id="km"
+            placeholder="km"
             onChange={onChange}
-          />
+            disabled={inverted} />
+          <div>
+            <label htmlFor="miles">Miles</label>
+            <input type="number"
+              value={inverted? amount : amount / 1.609} 
+              id="miles"
+              placeholder="Miles"
+              onChange={onChange}
+              disabled={!inverted} />
+          </div>
+
+          <div>
+            <button onClick={reset}>Reset</button>
+            <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
+          </div>
         </div>
-        <button onClick={reset}>Reset</button>
-        <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
-      </div>
       );
 
     }
@@ -121,6 +113,7 @@
 </body>
 
 </html>
+
 <!-- //            <MinutesToHours />
 <KmToMiles /> -->
 
