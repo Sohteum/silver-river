@@ -9,6 +9,7 @@
       function Btn(text) {
         return (
           <button
+          //만약 onClick을 여기에 넣는다면?이게 바로 이벤트리스너인거지 하지만 만약 커스텀 컴포넌트에 넣는다면?
             style={{
               backgroundColor: 'tomato',
               color: 'white',
@@ -27,7 +28,10 @@
         const changeValue = () => setValue('Revert Changes');
         return (
           <div>
+            
             <MemorizedBtn
+            // 여기 커스텀컴포넌트에 onClick을 넣는다면? 이건 이벤트리스너가 아니라 하나의 prop일 뿐
+            // 만약 부모가 어떤 state라도 변경이 있다?면 모든 자식들을 리랜더링하잖슴? 그럼 이건 추후에 어플리케이션이 느려지는 원인이 될 수 있음. 상상해바. 하나의 컴포넌트가 천개의 컴포넌트를 그리고 있다면 당연히 느려지겠지. 그리고 그 부모 컴포넌트를 변경하면 천개가 다시 그려질거란말이지. 그래서 유즈메모를 사용해서 해당하는 컴포넌트만 다시 그리도록 하는거야
               text={value}
               changeValue={changeValue}
             />
