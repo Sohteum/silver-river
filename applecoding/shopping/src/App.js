@@ -19,16 +19,14 @@ function App() {
       <div className="main-bg"></div>
       <Container>
         <Row>
-          <Card></Card>
+          <Card shoes={shoes[0].title}></Card>
+          <Card shoes={shoes[1].title}></Card>
+          <Card shoes={shoes[2].title}></Card>
           <Col sm>
-            <img src="/shoes2.jpg" width="80%" alt="" />
-            <h4>{shoes[1].title}</h4>
-            <p>{shoes[1].content}</p>
+            
           </Col>
           <Col sm>
-            <img src="/shoes3.jpg" width="80%" alt="" />
-            <h4>{shoes[2].title}</h4>
-            <p>{shoes[2].content}</p>
+            
           </Col>
         </Row>
       </Container>
@@ -41,9 +39,11 @@ function Card(props) {
     <Col sm>
       <img src="/shoes1.jpg" width="80%" alt="" />
       <h4>{props.shoes[0].title}</h4>
-      <p>{props.shoes[0].content}</p>
+      <p>{props.shoes[0].price}</p>
     </Col>
   );
 }
 
 export default App;
+
+
